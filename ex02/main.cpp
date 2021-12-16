@@ -14,30 +14,34 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <string>
+#include <iostream>
 
 int main( void ) {
 
-	//{
-	//	ClapTrap a;
-	//	ClapTrap b( a );
-	//	std::string	target = "The poor and innocent Bob";
+std::cout << "\n----------------------------------\n";
+	{
+		ClapTrap a;
+		ClapTrap b( a );
+		std::string	target = "The poor and innocent Bob";
 
-	//	a.attack(target);
-	//	b.takeDamage(3);
-	//	b.beRepaired(2);
-	//}
-	//{
-	//	
-	//	ScavTrap a;
-	//	ScavTrap b( a );
-	//	ScavTrap c( "Alfred" );
-	//	std::string	target = "Unfamous Bob";
+		a.attack(target);
+		b.takeDamage(3);
+		b.beRepaired(2);
+	}
+std::cout << "----------------------------------\n";
+	{
+		
+		ScavTrap a;
+		ScavTrap b( a );
+		ScavTrap c( "Alfred" );
+		std::string	target = "Unfamous Bob";
 
-	//	c.attack(target);
-	//	b.takeDamage(30);
-	//	b.beRepaired(20);
-	//	b.guardGate();
-	//}
+		c.attack(target);
+		b.takeDamage(30);
+		b.beRepaired(20);
+		b.guardGate();
+	}
+std::cout << "----------------------------------\n";
 	{
 		
 		FragTrap a;
@@ -50,5 +54,6 @@ int main( void ) {
 		b.beRepaired(10);
 		c.highFivesGuys();
 	}
+std::cout << "----------------------------------\n";
 	return 0;
 }

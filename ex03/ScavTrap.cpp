@@ -60,7 +60,8 @@ void	ScavTrap::beRepaired(unsigned int amount){
 
 void ScavTrap::guardGate( void ){
 
-	std::cout << "ScavTrap - YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
+	std::cout << "ScavTrap " << this->getName();
+	std::cout << " shouts: YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
 }
 
 void ScavTrap::setEnergyPoints( unsigned int energy){

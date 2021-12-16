@@ -13,18 +13,21 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include <string>
+#include <iostream>
 
 int main( void ) {
 
-	//{
-	//	ClapTrap a;
-	//	ClapTrap b( a );
-	//	std::string	target = "The poor and innocent Bob";
+std::cout << "\n----------------------------------\n";
+	{
+		ClapTrap a;
+		ClapTrap b( a );
+		std::string	target = "The poor and innocent Bob";
 
-	//	a.attack(target);
-	//	b.takeDamage(3);
-	//	b.beRepaired(2);
-	//}
+		a.attack(target);
+		b.takeDamage(3);
+		b.beRepaired(2);
+	}
+std::cout << "----------------------------------\n";
 	{
 		
 		ScavTrap a;
@@ -37,5 +40,6 @@ int main( void ) {
 		b.beRepaired(20);
 		b.guardGate();
 	}
+std::cout << "----------------------------------\n";
 	return 0;
 }
