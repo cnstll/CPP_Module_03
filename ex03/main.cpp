@@ -54,14 +54,16 @@ int main( void ) {
 	{
 		
 		DiamondTrap a;
-		DiamondTrap b( a );
-		DiamondTrap c( "A. Ackbar" );
-		std::string	target = "Impetulant Bob";
+		DiamondTrap c( "DiamondOven" );
+		std::string	target = "Bob Prefect";
 
-		c.attack(target);
-		b.takeDamage(40);
-		b.beRepaired(10);
-		b.highFivesGuys();
+		a.whoAmI();
+	
+		a.takeDamage(40);
+		a.beRepaired(10);
+		a.highFivesGuys();
+		c.whoAmI();
+		c.guardGate();
 	}
 	return 0;
 }

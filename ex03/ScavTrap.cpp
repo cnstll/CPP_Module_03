@@ -9,12 +9,11 @@ ScavTrap::ScavTrap( std::string name, unsigned int hit, unsigned int energy, uns
 	return ;
 };
 
-ScavTrap::ScavTrap( unsigned int energy )
-	: ClapTrap( energy ){
-
-	std::cout << "ScavTrap - Default constructor called\n";
-	return ;
-};
+//ScavTrap::ScavTrap( unsigned int energy ) : ClapTrap( "anonymous", 100, energy, 20 ){
+//
+//	std::cout << "ScavTrap - Default constructor called\n";
+//	return ;
+//};
 
 ScavTrap::ScavTrap( ScavTrap const & src ){
 
@@ -62,6 +61,10 @@ void	ScavTrap::beRepaired(unsigned int amount){
 void ScavTrap::guardGate( void ){
 
 	std::cout << "ScavTrap - YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
+}
+
+void ScavTrap::setEnergyPoints( unsigned int energy){
+	ClapTrap::setEnergyPoints(energy);
 }
 
 ScavTrap	&ScavTrap::operator= ( ScavTrap const & rhs ){

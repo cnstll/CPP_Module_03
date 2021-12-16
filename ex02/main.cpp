@@ -48,7 +48,7 @@ int main( void ) {
 		c.attack(target);
 		b.takeDamage(40);
 		b.beRepaired(10);
-		b.highFivesGuys();
+		c.highFivesGuys();
 	}
 	return 0;
 }

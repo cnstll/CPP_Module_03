@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 19:43:21 by calle             #+#    #+#             */
+/*   Updated: 2021/12/15 19:43:24 by calle            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
@@ -63,4 +75,3 @@ ScavTrap	&ScavTrap::operator= ( ScavTrap const & rhs ){
 	ClapTrap::operator=(rhs);
 	return *this;
 }
-
