@@ -12,16 +12,20 @@
 
 #include "ClapTrap.hpp"
 #include <string>
+#include <iostream>
 
 int main( void ) {
 
-	//ClapTrap a( "Jim" );
-	ClapTrap a;
-	ClapTrap b( a );
-	std::string	target = "The poor and innocent Bob";
+	std::cout << "\n----------------------------------\n";
+	{
+		ClapTrap a;
+		ClapTrap b( a );
+		std::string	target = "The poor and innocent Bob";
 
-	a.attack(target);
-	b.takeDamage(3);
-	b.beRepaired(2);
+		a.attack(target);
+		b.takeDamage(3);
+		b.beRepaired(2);
+	}
+	std::cout << "----------------------------------\n";
 	return 0;
 }

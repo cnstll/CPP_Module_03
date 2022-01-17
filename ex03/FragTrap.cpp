@@ -21,12 +21,12 @@ FragTrap::FragTrap( std::string name, unsigned int hit, unsigned int energy, uns
 	return ;
 };
 
-FragTrap::FragTrap( unsigned int hit, unsigned int attack )
-	: ClapTrap( hit, attack ){
+//FragTrap::FragTrap( std::string name, unsigned int hit, unsigned int attack )
+	//: ClapTrap( name, hit, 100, attack){
 
-	std::cout << "FragTrap - Default constructor called\n";
-	return ;
-};
+	//std::cout << "FragTrap - Default constructor called\n";
+	//return ;
+//};
 
 FragTrap::FragTrap( FragTrap const & src ){
 
@@ -75,6 +75,18 @@ void	FragTrap::highFivesGuys(void){
 
 	std::cout << "FragTrap " << this->getName();
 	std::cout << " says: Do you want to High Fives friend ?\n";
+}
+
+void FragTrap::setName( std::string name){
+	ClapTrap::setName(name);
+}
+
+void FragTrap::setHitPoints( unsigned int hit){
+	ClapTrap::setHitPoints(hit);
+}
+
+void FragTrap::setAttackDamage( unsigned int attack){
+	ClapTrap::setAttackDamage(attack);
 }
 
 FragTrap	&FragTrap::operator= ( FragTrap const & rhs ){

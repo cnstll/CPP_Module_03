@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 19:43:21 by calle             #+#    #+#             */
+/*   Updated: 2021/12/15 19:43:24 by calle            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
@@ -54,7 +66,8 @@ void	ScavTrap::beRepaired(unsigned int amount){
 
 void ScavTrap::guardGate( void ){
 
-	std::cout << "ScavTrap - YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
+	std::cout << "ScavTrap " << this->getName();
+	std::cout << " shouts: YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
 }
 
 ScavTrap	&ScavTrap::operator= ( ScavTrap const & rhs ){
@@ -63,4 +76,3 @@ ScavTrap	&ScavTrap::operator= ( ScavTrap const & rhs ){
 	ClapTrap::operator=(rhs);
 	return *this;
 }
-

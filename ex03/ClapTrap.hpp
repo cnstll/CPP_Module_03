@@ -36,6 +36,10 @@ class ClapTrap {
 		unsigned int	getHitPoints( void ) const;
 		void	decreaseHitPoints( unsigned int amount  );
 		void	increaseHitPoints( unsigned int amount  );
+		void 	setName( std::string name);
+		void 	setHitPoints( unsigned int hit);
+		void 	setEnergyPoints( unsigned int energy);
+		void 	setAttackDamage( unsigned int attack);
 
 		ClapTrap	&operator= ( ClapTrap const & rhs );
 

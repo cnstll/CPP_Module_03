@@ -114,6 +114,22 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	std::cout << "\n";
 };
 
+void ClapTrap::setName( std::string name){
+	_name = name;
+}
+
+void ClapTrap::setHitPoints( unsigned int hit){
+	_hitPoints = hit;
+}
+
+void ClapTrap::setEnergyPoints( unsigned int energy){
+	_energyPoints = energy;
+}
+
+void ClapTrap::setAttackDamage( unsigned int attack){
+	_attackDamage = attack;
+}
+
 ClapTrap	&ClapTrap::operator= ( ClapTrap const & rhs ){
 
 	if (this == &rhs)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 19:44:01 by calle             #+#    #+#             */
+/*   Updated: 2021/12/15 19:44:04 by calle            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 #include "DiamondTrap.hpp"
 #include "FragTrap.hpp"
@@ -7,13 +19,17 @@
 
 //• Name (Parameter of constructor)
 //• Claptrap::Name (Parameter of constructor + "_clap_name")
-//• Hitpoints (Fragtrap)
-//• Energy points (Scavtrap)
-//• Attack damage (Fragtrap)
+//• Hitpoints (Fragtrap) 100
+//• Energy points (Scavtrap) 50
+//• Attack damage (Fragtrap) 30
 //• attack (Scavtrap)
-DiamondTrap::DiamondTrap( std::string name, unsigned int hit, unsigned int energy, unsigned int attack )
-	: _name(name), FragTrap( hit, attack ), ScavTrap( energy ), ClapTrap(name+"_clap_name"){
-
+DiamondTrap::DiamondTrap( std::string diamond_name, unsigned int hit, unsigned int energy, unsigned int attack )
+{
+	DiamondTrap::setName(diamond_name);
+	FragTrap::setName(diamond_name+"_clap_name");
+	FragTrap::setHitPoints(hit);
+	FragTrap::setAttackDamage(attack);
+	ScavTrap::setEnergyPoints(energy);
 	std::cout << "DiamondTrap - Default constructor called\n";
 	return ;
 };
@@ -30,8 +46,9 @@ DiamondTrap::~DiamondTrap( void ){
 	std::cout << "DiamondTrap - Destructor called\n";
 	return;
 };
-void	DiamondTrap::attack( unsigned int amount ){
-	ScavTrap::attack( unsigned int amount );
+
+void	DiamondTrap::attack( std::string const & target ){
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::takeDamage( unsigned int amount ){
@@ -56,13 +73,21 @@ void	DiamondTrap::beRepaired(unsigned int amount){
 	std::cout << "\n";
 };
 
-std::string	ClapTrap::getName( void ) const{
+std::string	DiamondTrap::getName( void ) {
 
 	return this->_name;
 }
 
+void	DiamondTrap::setName( std::string diamond_name) {
+
+	DiamondTrap::_name=diamond_name;
+}
+
 void	DiamondTrap::whoAmI( void ){
 
+	std::cout << "Hello friend ! My name is " << DiamondTrap::getName();
+	std::cout << " and my clapTrap name is " << FragTrap::getName();
+	std::cout << "!\n";
 		
 }
 
@@ -71,4 +96,3 @@ DiamondTrap	&DiamondTrap::operator= ( DiamondTrap const & rhs ){
 	ClapTrap::operator=(rhs);
 	return *this;
 };
-
