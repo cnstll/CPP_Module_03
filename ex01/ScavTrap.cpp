@@ -36,37 +36,15 @@ ScavTrap::~ScavTrap( void ){
 
 void	ScavTrap::attack( std::string const & target ){
 
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "[ScavTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
-	std::cout << " points of damage!\n";
-};
-
-void	ScavTrap::takeDamage( unsigned int amount ){
-
-	std::cout << "ScavTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " ScavTrap lost " << amount << " hit points!";
-	this->decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ScavTrap has " << this->getHitPoints() << " hit points left.";
-	std::cout << "\n";
-};
-
-void	ScavTrap::beRepaired(unsigned int amount){
-
-	std::cout << "ScavTrap " << this->getName();
-	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
-	this->increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ScavTrap has " << this->getHitPoints() << " hit points now.";
-	std::cout << "\n";
+	std::cout << " points of damage!!\n";
 };
 
 void ScavTrap::guardGate( void ){
 
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "[ScavTrap] " << this->getName();
 	std::cout << " shouts: YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
 }
 

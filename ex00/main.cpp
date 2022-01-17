@@ -18,13 +18,15 @@ int main( void ) {
 
 	std::cout << "\n----------------------------------\n";
 	{
-		ClapTrap a;
+		ClapTrap a ("Jim");
 		ClapTrap b( a );
 		std::string	target = "The poor and innocent Bob";
 
+		std::cout << std::endl;
 		a.attack(target);
 		b.takeDamage(3);
 		b.beRepaired(2);
+		std::cout << std::endl;
 	}
 	std::cout << "----------------------------------\n";
 	return 0;

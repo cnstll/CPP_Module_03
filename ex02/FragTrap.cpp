@@ -36,37 +36,15 @@ FragTrap::~FragTrap( void ){
 
 void	FragTrap::attack( std::string const & target ){
 
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "[FragTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
 	std::cout << " points of damage!\n";
 };
 
-void	FragTrap::takeDamage( unsigned int amount ){
-
-	std::cout << "FragTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " FragTrap lost " << amount << " hit points!";
-	this->decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "FragTrap has " << this->getHitPoints() << " hit points left.";
-	std::cout << "\n";
-};
-
-void	FragTrap::beRepaired(unsigned int amount){
-
-	std::cout << "FragTrap " << this->getName();
-	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
-	this->increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "FragTrap has " << this->getHitPoints() << " hit points now.";
-	std::cout << "\n";
-};
-
 void	FragTrap::highFivesGuys(void){
 
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "[FragTrap] " << this->getName();
 	std::cout << " says: Do you want to High Fives friend ?\n";
 }
 

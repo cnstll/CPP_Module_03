@@ -6,7 +6,7 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:44:27 by calle             #+#    #+#             */
-/*   Updated: 2021/10/13 18:05:38 by calle            ###   ########.fr       */
+/*   Updated: 2021/10/13 12:09:10 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,6 @@ FragTrap::FragTrap( std::string name, unsigned int hit, unsigned int energy, uns
 	std::cout << "FragTrap - Default constructor called\n";
 	return ;
 };
-
-//FragTrap::FragTrap( std::string name, unsigned int hit, unsigned int attack )
-	//: ClapTrap( name, hit, 100, attack){
-
-	//std::cout << "FragTrap - Default constructor called\n";
-	//return ;
-//};
 
 FragTrap::FragTrap( FragTrap const & src ){
 
@@ -43,51 +36,29 @@ FragTrap::~FragTrap( void ){
 
 void	FragTrap::attack( std::string const & target ){
 
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "[FragTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
 	std::cout << " points of damage!\n";
 };
 
-void	FragTrap::takeDamage( unsigned int amount ){
-
-	std::cout << "FragTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " FragTrap lost " << amount << " hit points!";
-	this->decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "FragTrap has " << this->getHitPoints() << " hit points left.";
-	std::cout << "\n";
-};
-
-void	FragTrap::beRepaired(unsigned int amount){
-
-	std::cout << "FragTrap " << this->getName();
-	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
-	this->increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "FragTrap has " << this->getHitPoints() << " hit points now.";
-	std::cout << "\n";
-};
-
 void	FragTrap::highFivesGuys(void){
 
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "[FragTrap] " << this->getName();
 	std::cout << " says: Do you want to High Fives friend ?\n";
-}
+};
 
 void FragTrap::setName( std::string name){
 	ClapTrap::setName(name);
-}
+};
 
 void FragTrap::setHitPoints( unsigned int hit){
 	ClapTrap::setHitPoints(hit);
-}
+};
 
 void FragTrap::setAttackDamage( unsigned int attack){
 	ClapTrap::setAttackDamage(attack);
-}
+};
 
 FragTrap	&FragTrap::operator= ( FragTrap const & rhs ){
 

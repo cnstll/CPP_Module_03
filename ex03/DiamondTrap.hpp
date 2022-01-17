@@ -17,15 +17,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include <string>
-//ScavTrap.
-//Its attributes and functions will be chosen from either of its parent classes:
-//• Name (Parameter of constructor)
-//• Claptrap::Name (Parameter of constructor + "_clap_name")
-//• Hitpoints (Fragtrap)
-//• Energy points (Scavtrap)
-//• Attack damage (Fragtrap)
-//• attack (Scavtrap)
-//It will have the special functions of both.
+
 class DiamondTrap : public ScavTrap, public FragTrap {
 
 	public:
@@ -35,8 +27,6 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		~DiamondTrap( void );
 
 		void	attack( std::string const & target );
-		void	takeDamage( unsigned int amount );
-		void	beRepaired( unsigned int amount );
 		void	whoAmI( void );
 
 		std::string	getName( void );

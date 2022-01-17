@@ -6,7 +6,7 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:56:17 by calle             #+#    #+#             */
-/*   Updated: 2021/10/12 19:36:34 by calle            ###   ########.fr       */
+/*   Updated: 2021/10/12 18:57:07 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ unsigned int	ClapTrap::getHitPoints( void ) const{
 	return this->_hitPoints;
 }
 
-void	ClapTrap::decreaseHitPoints( unsigned int amount  ){
+void	ClapTrap::_decreaseHitPoints( unsigned int amount  ){
 	
 	if ( this->_hitPoints <= amount )
 		this->_hitPoints = 0;
@@ -57,7 +57,7 @@ void	ClapTrap::decreaseHitPoints( unsigned int amount  ){
 		this->_hitPoints -= amount;
 }
 
-void	ClapTrap::increaseHitPoints( unsigned int amount  ){
+void	ClapTrap::_increaseHitPoints( unsigned int amount  ){
 	
 	this->_hitPoints += amount;
 }
@@ -69,7 +69,7 @@ std::string	ClapTrap::getName( void ) const{
 
 void	ClapTrap::attack( std::string const & target ){
 
-	std::cout << "ClapTrap " << this->getName();
+	std::cout << "[ClapTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
 	std::cout << " points of damage!\n";
@@ -77,23 +77,21 @@ void	ClapTrap::attack( std::string const & target ){
 
 void	ClapTrap::takeDamage( unsigned int amount ){
 
-	std::cout << "ClapTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " ClapTrap lost " << amount << " hit points!";
-	this->decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ClapTrap has " << this->getHitPoints() << " hit points now.";
+	std::cout << "[ClapTrap] " << this->getName();
+	std::cout << " took a hit! ";
+	std::cout << this->getName() << " lost " << amount << " hit points! ";
+	this->_decreaseHitPoints( amount );
+	std::cout << this->getName() << " has "  << this->getHitPoints() << " hit points now.";
 	std::cout << "\n";
 };
 
 void	ClapTrap::beRepaired(unsigned int amount){
 
-	std::cout << "ClapTrap " << this->getName();
+	std::cout << "[ClapTrap] " << this->getName();
 	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
-	this->increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ClapTrap has " << this->getHitPoints() << " hit points now.";
+	std::cout << "is being repaired... ";
+	this->_increaseHitPoints( amount );
+	std::cout << this->getName() << " has " << this->getHitPoints() << " hit points now (+" << amount << ").";
 	std::cout << "\n";
 };
 

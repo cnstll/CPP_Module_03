@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 19:42:20 by calle             #+#    #+#             */
+/*   Updated: 2021/12/15 19:42:23 by calle            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
@@ -8,12 +20,6 @@ ScavTrap::ScavTrap( std::string name, unsigned int hit, unsigned int energy, uns
 	std::cout << "ScavTrap - Default constructor called\n";
 	return ;
 };
-
-//ScavTrap::ScavTrap( unsigned int energy ) : ClapTrap( "anonymous", 100, energy, 20 ){
-//
-//	std::cout << "ScavTrap - Default constructor called\n";
-//	return ;
-//};
 
 ScavTrap::ScavTrap( ScavTrap const & src ){
 
@@ -30,40 +36,17 @@ ScavTrap::~ScavTrap( void ){
 
 void	ScavTrap::attack( std::string const & target ){
 
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "[ScavTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
-	std::cout << " points of damage!\n";
-};
-
-void	ScavTrap::takeDamage( unsigned int amount ){
-
-	std::cout << "ScavTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " ScavTrap lost " << amount << " hit points!";
-	this->decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ScavTrap has " << this->getHitPoints() << " hit points left.";
-	std::cout << "\n";
-};
-
-void	ScavTrap::beRepaired(unsigned int amount){
-
-	std::cout << "ScavTrap " << this->getName();
-	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
-	this->increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ScavTrap has " << this->getHitPoints() << " hit points now.";
-	std::cout << "\n";
+	std::cout << " points of damage!!\n";
 };
 
 void ScavTrap::guardGate( void ){
 
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "[ScavTrap] " << this->getName();
 	std::cout << " shouts: YOU SHAAALLL NOT PASSSSSS (Gate Keeper Mode Activated)\n";
 }
-
 void ScavTrap::setEnergyPoints( unsigned int energy){
 	ClapTrap::setEnergyPoints(energy);
 }

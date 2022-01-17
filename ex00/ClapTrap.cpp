@@ -69,7 +69,7 @@ std::string	ClapTrap::getName( void ) const{
 
 void	ClapTrap::attack( std::string const & target ){
 
-	std::cout << "ClapTrap " << this->getName();
+	std::cout << "[ClapTrap] " << this->getName();
 	std::cout << " attacks "<< target;
 	std::cout << " causing " << this->getAttackDamage();
 	std::cout << " points of damage!\n";
@@ -77,28 +77,28 @@ void	ClapTrap::attack( std::string const & target ){
 
 void	ClapTrap::takeDamage( unsigned int amount ){
 
-	std::cout << "ClapTrap " << this->getName();
-	std::cout << " took a hit!";
-	std::cout << " ClapTrap lost " << amount << " hit points!";
+	std::cout << "[ClapTrap] " << this->getName();
+	std::cout << " took a hit! ";
+	std::cout << this->getName() << " lost " << amount << " hit points! ";
 	this->_decreaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ClapTrap has " << this->getHitPoints() << " hit points now.";
+	std::cout << this->getName() << " has "  << this->getHitPoints() << " hit points now.";
 	std::cout << "\n";
 };
 
 void	ClapTrap::beRepaired(unsigned int amount){
 
-	std::cout << "ClapTrap " << this->getName();
+	std::cout << "[ClapTrap] " << this->getName();
 	std::cout << " with " << this->getHitPoints() << " hit points ";
-	std::cout << "is being repaired..";
+	std::cout << "is being repaired... ";
 	this->_increaseHitPoints( amount );
-	std::cout << "\n";
-	std::cout << "ClapTrap has " << this->getHitPoints() << " hit points now.";
+	std::cout << this->getName() << " has " << this->getHitPoints() << " hit points now (+" << amount << ").";
 	std::cout << "\n";
 };
 
 ClapTrap	&ClapTrap::operator= ( ClapTrap const & rhs ){
 
+	if (this == &rhs)
+		return *this;
 	this->_name = rhs.getName();
 	this->_hitPoints = rhs.getHitPoints();
 	this->_energyPoints = rhs.getEnergyPoints();
