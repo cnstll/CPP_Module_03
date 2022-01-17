@@ -7,6 +7,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX=c++
 
+#-Wshadow warns whenever a local variable or type declaration shadows another variable,
+# parameter, class member, etc.
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 .PHONY: all clean fclean re
