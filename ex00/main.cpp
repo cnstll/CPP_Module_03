@@ -6,7 +6,7 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 18:42:23 by calle             #+#    #+#             */
-/*   Updated: 2021/10/12 18:03:02 by calle            ###   ########.fr       */
+/*   Updated: 2021/12/15 13:44:36 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main( void ) {
 
+	//ClapTrap a( "Jim" );
 	ClapTrap a;
 	ClapTrap b( a );
 	std::string	target = "The poor and innocent Bob";
